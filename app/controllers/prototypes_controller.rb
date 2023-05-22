@@ -23,6 +23,9 @@ class PrototypesController < ApplicationController
     @prototype =Prototype.find(params[:id])
   end
 
+  def destroy
+  end
+
   private
 
   def prototype_params
