@@ -24,7 +24,7 @@ class PrototypesController < ApplicationController
   def edit
     @prototype = Prototype.find(params[:id])
   end
-  
+
   def update
     @prototype = Prototype.find(params[:id])
 
@@ -36,7 +36,7 @@ class PrototypesController < ApplicationController
   end
 
   def show
-    @prototype =Prototype.find(params[:id])
+    @prototype = Prototype.find(params[:id])
   end
 
   private
@@ -47,9 +47,8 @@ class PrototypesController < ApplicationController
 
   def move_to_index
     prototype = Prototype.find(params[:id])
-    unless user_signed_in? && current_user == prototype.user
-      redirect_to action: :index
-    end
+    return if user_signed_in? && current_user == prototype.user
+
+    redirect_to action: :index
   end
-  
 end
