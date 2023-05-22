@@ -30,6 +30,9 @@ class PrototypesController < ApplicationController
     else
       render :edit
     end
+
+  def show
+    @prototype =Prototype.find(params[:id])
   end
 
   private
