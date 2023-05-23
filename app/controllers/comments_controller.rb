@@ -3,10 +3,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      # 保存に成功した場合の処理
       redirect_to prototype_path(@comment.prototype)
     else
-      # 保存に失敗した場合の処理
       @prototype = @comment.prototype
       @comments = @prototype.comments
       render 'prototypes/show'
