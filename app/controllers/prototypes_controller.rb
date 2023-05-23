@@ -14,10 +14,8 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.new(prototype_params)
 
     if @prototype.save
-      # 保存に成功した場合の処理
       redirect_to root_path
     else
-      # 保存に失敗した場合の処理
       render :new
     end
   end
